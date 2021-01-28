@@ -1,0 +1,30 @@
+$border: 2rem;
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.card {
+  display: flex;
+  max-width: 50vw;
+
+  .bg {
+    border-radius: $border 0 0 $border;
+    flex: 1;
+    background-image: url("../images/drawers.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    //
+    padding: 1rem;
+  }
+  .body {
+    flex: 2;
+    margin: 1rem;
+  }
+}
+.attribution {
+  display: none;
+}
