@@ -1,17 +1,24 @@
+@import "https://fonts.google.com/specimen/Manrope";
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 100vw;
   min-height: 100vh;
+  font-family: Manrope, sans-serif;
+  background-color: #ecf2f8;
+  padding: 0;
+  margin: 0;
 }
 
 .card {
   display: flex;
   max-width: 50vw;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  overflow: hidden;
 }
 .card .bg {
-  border-radius: 2rem 0 0 2rem;
   flex: 1;
   background-image: url("../images/drawers.jpg");
   background-position: center;
@@ -21,7 +28,41 @@ body {
 }
 .card .body {
   flex: 2;
-  margin: 1rem;
+  margin: 1.5rem;
+}
+.card .body .title {
+  font-weight: bold;
+}
+.card .body .body {
+  margin: 0.75rem 0;
+  font-size: 13px;
+  color: #6d7f97;
+}
+.card .body .footer {
+  display: flex;
+}
+.card .body .footer .left {
+  display: flex;
+}
+.card .body .footer .left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+}
+.card .body .footer .left .about {
+  margin: 0.75rem 0 0.75rem 0.75rem;
+  font-size: 13px;
+}
+.card .body .footer .left .about .sub {
+  color: #6d7f97;
+}
+.card .body .footer .icon {
+  margin: 1rem 5px 1rem auto;
+  background-color: #ecf2f8;
+  padding: 0.5rem 0.6rem;
+  border-radius: 50%;
+  height: 0%;
 }
 
 .attribution {

@@ -1,28 +1,82 @@
-$border: 2rem;
+@import "https://fonts.google.com/specimen/Manrope";
+
+$border: 0.75rem;
+
+$font: 13px;
+
+$DarkBlue: hsl(217, 19%, 35%);
+$Blue: hsl(214, 17%, 51%);
+$grayBlue: hsl(212, 23%, 69%);
+$lightGrayBlue: hsl(210, 46%, 95%);
+
+//  unites
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 100vw;
   min-height: 100vh;
+  font-family: Manrope, sans-serif;
+  background-color: $lightGrayBlue;
+  padding: 0;
+  margin: 0;
 }
 .card {
   display: flex;
   max-width: 50vw;
-
+  background-color: #fff;
+  border-radius: $border;
+  overflow: hidden;
   .bg {
-    border-radius: $border 0 0 $border;
     flex: 1;
     background-image: url("../images/drawers.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    //
     padding: 1rem;
   }
   .body {
     flex: 2;
-    margin: 1rem;
+    margin: 1.5rem;
+    .title {
+      font-weight: bold;
+    }
+    .body {
+      margin: 0.75rem 0;
+      font-size: $font;
+      color: $Blue;
+    }
+    .footer {
+      display: flex;
+      .left {
+        display: flex;
+        img {
+          $imgSize: 40px;
+          width: $imgSize;
+          height: $imgSize;
+          border-radius: 50%;
+          margin-top: 0.5rem;
+        }
+        .about {
+          $margin: 0.75rem;
+          margin: $margin 0 $margin 0.75rem;
+          font-size: $font;
+          .title {
+          }
+          .sub {
+            color: $Blue;
+          }
+        }
+      }
+      .icon {
+        $margin: 0.75rem;
+        margin: 1rem 5px 1rem auto;
+        background-color: $lightGrayBlue;
+        padding: 0.5rem 0.6rem;
+        border-radius: 50%;
+        height: 0%;
+      }
+    }
   }
 }
 .attribution {
