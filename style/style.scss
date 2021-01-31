@@ -75,6 +75,16 @@ body {
         padding: 0.5rem 0.6rem;
         border-radius: 50%;
         height: 0%;
+        path {
+          fill: $DarkBlue;
+        }
+        &.active,
+        &:hover {
+          background-color: $DarkBlue;
+          path {
+            fill: $lightGrayBlue;
+          }
+        }
       }
     }
   }

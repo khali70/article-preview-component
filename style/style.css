@@ -64,6 +64,15 @@ body {
   border-radius: 50%;
   height: 0%;
 }
+.card .body .footer .icon path {
+  fill: #48556a;
+}
+.card .body .footer .icon.active, .card .body .footer .icon:hover {
+  background-color: #48556a;
+}
+.card .body .footer .icon.active path, .card .body .footer .icon:hover path {
+  fill: #ecf2f8;
+}
 
 .attribution {
   display: none;
