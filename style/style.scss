@@ -8,6 +8,8 @@ $DarkBlue: hsl(217, 19%, 35%);
 $Blue: hsl(214, 17%, 51%);
 $grayBlue: hsl(212, 23%, 69%);
 $lightGrayBlue: hsl(210, 46%, 95%);
+$margin: 0.75rem;
+$padding: 0.75rem;
 
 //  unites
 body {
@@ -48,6 +50,8 @@ body {
     }
     .footer {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       .left {
         display: flex;
         img {
@@ -69,19 +73,20 @@ body {
         }
       }
       .icon {
-        $margin: 0.75rem;
-        margin: 1rem 5px 1rem auto;
         background-color: $lightGrayBlue;
         padding: 0.5rem 0.6rem;
         border-radius: 50%;
-        height: 0%;
-        path {
+        position: relative;
+        .info {
+          display: none;
+        }
+        > path {
           fill: $DarkBlue;
         }
         &.active,
         &:hover {
           background-color: $DarkBlue;
-          path {
+          .share path {
             fill: $lightGrayBlue;
           }
         }
@@ -91,4 +96,88 @@ body {
 }
 .attribution {
   display: none;
+}
+@media only screen and (min-width: 375px) {
+  .icon:hover {
+    .info {
+      z-index: 1;
+      position: absolute;
+      bottom: 150%;
+      right: -50%;
+      display: flex !important;
+      background-color: $DarkBlue;
+      color: $lightGrayBlue;
+      padding: $padding;
+      border-radius: $border;
+      &::after {
+        content: "";
+        border: 1rem solid;
+        border-color: $DarkBlue transparent transparent transparent;
+        position: absolute;
+        bottom: -70%;
+        right: 10%;
+      }
+      * {
+        margin: 0 $margin/2;
+      }
+      path {
+        fill: $lightGrayBlue;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 375px) {
+  #body {
+    .card {
+      flex-direction: column;
+      min-width: 80vw;
+      .bg {
+        min-height: 40vh;
+      }
+      .body {
+        margin: 0;
+        > .title {
+          margin: 1rem 1.5rem;
+        }
+        .body {
+          margin: 0 1.5rem;
+        }
+        .footer {
+          padding: $padding/2;
+          margin-top: $margin;
+
+          &.active {
+            background-color: $DarkBlue;
+            .left {
+              display: none;
+            }
+            .icon {
+              background-color: $DarkBlue;
+              display: flex;
+              justify-content: space-between;
+              border-radius: 0;
+              width: 100%;
+              .info {
+                width: 70%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                color: $grayBlue;
+                font-weight: lighter;
+              }
+              path {
+                fill: $lightGrayBlue;
+              }
+              .share,
+              .share:hover {
+                padding: 0.5rem 0.6rem;
+                border-radius: 50%;
+                background-color: $grayBlue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
