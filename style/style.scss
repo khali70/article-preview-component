@@ -45,6 +45,9 @@ body {
     width: 248px;
     margin: 30px;
     .title {
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
       font-weight: bold;
       color: $DarkBlue;
     }
@@ -109,7 +112,12 @@ body {
   }
 }
 .attribution {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: content;
+  flex: 1;
+  padding: 0.25rem;
 }
 @media only screen and (min-width: 375px) {
   .icon:hover {
