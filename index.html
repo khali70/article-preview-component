@@ -94,11 +94,21 @@
       >. Coded by <a href="https://www.github.com/khali70">Ahmed Khalifa</a>.
     </div>
     <script>
-      const icon = document.getElementsByClassName("icon")[0];
+      const $ = (selector) => {
+        return document.querySelector(selector);
+      };
+      const icon = $(".icon");
       icon.addEventListener("click", () => {
         const footer = document.querySelector(".card .body .footer");
         footer.classList.toggle("active");
       });
+      let windowWidth = window.innerWidth;
+      window.onresize = () => {
+        windowWidth = window.innerWidth;
+      };
+      if (windowWidth <= 375) {
+        $(".card .body").style.width = $(".card").offsetWidth + "px";
+      }
     </script>
   </body>
 </html>
