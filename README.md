@@ -2,4 +2,4 @@
 
 ### to preview the card go [here](https://khali70.github.io/article-preview-component/)
 
-[![preview](images/preview.png)](https://khali70.github.io/article-preview-component/)
+[![site preview](images/preview.png)](https://khali70.github.io/article-preview-component/)
