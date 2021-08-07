@@ -10,7 +10,9 @@ $grayBlue: hsl(212, 23%, 69%);
 $lightGrayBlue: hsl(210, 46%, 95%);
 $margin: 0.75rem;
 $padding: 0.75rem;
-
+* {
+  box-sizing: border-box;
+}
 //  unites
 body {
   display: flex;
@@ -25,37 +27,44 @@ body {
 }
 .card {
   display: flex;
-  max-width: 50vw;
+  height: 175px;
   background-color: #fff;
   border-radius: $border;
   overflow: hidden;
   .bg {
-    flex: 1;
+    width: 177px;
+    height: 100%;
     background-image: url("../images/drawers.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 1rem;
   }
   .body {
-    flex: 2;
-    margin: 1.5rem;
+    font-size: $font;
+    box-sizing: border-box;
+    width: 248px;
+    margin: 30px;
     .title {
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
       font-weight: bold;
+      color: $DarkBlue;
     }
     .body {
-      margin: 0.75rem 0;
-      font-size: $font;
+      margin: 12px 0 10px 0;
+      font-size: 9px;
       color: $Blue;
     }
     .footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       .left {
         display: flex;
         img {
-          $imgSize: 40px;
+          $imgSize: 30px;
           width: $imgSize;
           height: $imgSize;
           border-radius: 50%;
@@ -64,18 +73,26 @@ body {
         .about {
           $margin: 0.75rem;
           margin: $margin 0 $margin 0.75rem;
-          font-size: $font;
           .title {
+            color: $DarkBlue;
+            font-size: 10px;
           }
           .sub {
             color: $Blue;
+            font-size: 9px;
           }
         }
       }
       .icon {
         background-color: $lightGrayBlue;
-        padding: 0.5rem 0.6rem;
+        padding: 0.5rem;
+        $imgSize: 30px;
+        width: $imgSize;
+        height: $imgSize;
         border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-self: center;
         position: relative;
         .info {
           display: none;
@@ -95,7 +112,12 @@ body {
   }
 }
 .attribution {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: content;
+  flex: 1;
+  padding: 0.25rem;
 }
 @media only screen and (min-width: 375px) {
   .icon:hover {
@@ -131,8 +153,10 @@ body {
     .card {
       flex-direction: column;
       min-width: 80vw;
+      height: auto;
       .bg {
         min-height: 40vh;
+        width: 100%;
       }
       .body {
         margin: 0;
@@ -140,6 +164,8 @@ body {
           margin: 1rem 1.5rem;
         }
         .body {
+          box-sizing: border-box;
+          max-width: calc(100% - 1.6rem);
           margin: 0 1.5rem;
         }
         .footer {

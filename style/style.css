@@ -1,4 +1,8 @@
 @import "https://fonts.google.com/specimen/Manrope";
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -13,29 +17,35 @@ body {
 
 .card {
   display: flex;
-  max-width: 50vw;
+  height: 175px;
   background-color: #fff;
   border-radius: 0.75rem;
   overflow: hidden;
 }
 .card .bg {
-  flex: 1;
+  width: 177px;
+  height: 100%;
   background-image: url("../images/drawers.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 1rem;
 }
 .card .body {
-  flex: 2;
-  margin: 1.5rem;
+  font-size: 13px;
+  box-sizing: border-box;
+  width: 248px;
+  margin: 30px;
 }
 .card .body .title {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
   font-weight: bold;
+  color: #48556a;
 }
 .card .body .body {
-  margin: 0.75rem 0;
-  font-size: 13px;
+  margin: 12px 0 10px 0;
+  font-size: 9px;
   color: #6d7f97;
 }
 .card .body .footer {
@@ -47,22 +57,31 @@ body {
   display: flex;
 }
 .card .body .footer .left img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   margin-top: 0.5rem;
 }
 .card .body .footer .left .about {
   margin: 0.75rem 0 0.75rem 0.75rem;
-  font-size: 13px;
+}
+.card .body .footer .left .about .title {
+  color: #48556a;
+  font-size: 10px;
 }
 .card .body .footer .left .about .sub {
   color: #6d7f97;
+  font-size: 9px;
 }
 .card .body .footer .icon {
   background-color: #ecf2f8;
-  padding: 0.5rem 0.6rem;
+  padding: 0.5rem;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-self: center;
   position: relative;
 }
 .card .body .footer .icon .info {
@@ -79,7 +98,12 @@ body {
 }
 
 .attribution {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: content;
+  flex: 1;
+  padding: 0.25rem;
 }
 
 @media only screen and (min-width: 375px) {
@@ -113,9 +137,11 @@ body {
   #body .card {
     flex-direction: column;
     min-width: 80vw;
+    height: auto;
   }
   #body .card .bg {
     min-height: 40vh;
+    width: 100%;
   }
   #body .card .body {
     margin: 0;
@@ -124,6 +150,8 @@ body {
     margin: 1rem 1.5rem;
   }
   #body .card .body .body {
+    box-sizing: border-box;
+    max-width: calc(100% - 1.6rem);
     margin: 0 1.5rem;
   }
   #body .card .body .footer {
